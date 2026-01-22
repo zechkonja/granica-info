@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My PWA App</title>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="public/manifest.json">
     <meta name="theme-color" content="#2196F3">
-    <link rel="apple-touch-icon" href="icon-192.png">
+    <link rel="apple-touch-icon" href="public/icon-192.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,16 +31,7 @@
     </style>
 </head>
 <body>
-<h1>Granica Info</h1>
-<p>Get all info and predictions on traffic jam on borders</p>
-<button onclick="alert('Hello from PWA!')">Click Me</button>
-
-<script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js')
-            .then(() => console.log('Service Worker Registered'))
-            .catch(err => console.log('SW Error:', err));
-    }
-</script>
+<div id="root"></div>
+<script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

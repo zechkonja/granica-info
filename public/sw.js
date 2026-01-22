@@ -1,21 +1,17 @@
-const CACHE_NAME = 'my-pwa-v1';
+const CACHE_NAME = 'granica-info-v1';
 const urlsToCache = [
     '/',
-    '/index.html',
-    '/manifest.json',
-    '/icon-192.png',
-    '/icon-512.png'
+    '/index.html'
 ];
 
-// Install event
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then(cache => cache.addAll(urlsToCache))
     );
+    self.skipWaiting();
 });
 
-// Fetch event
 self.addEventListener('fetch', event => {
     event.respondWith(
         caches.match(event.request)
@@ -23,17 +19,14 @@ self.addEventListener('fetch', event => {
     );
 });
 
-// Activate event
 self.addEventListener('activate', event => {
     event.waitUntil(
         caches.keys().then(cacheNames => {
             return Promise.all(
-                cacheNames.map(cache => {
-                    if (cache !== CACHE_NAME) {
-                        return caches.delete(cache);
-                    }
-                })
+                cacheNames.filter(cache => cache !== CACHE_NAME)
+                    .map(cache => caches.delete(cache))
             );
         })
     );
+    self.clients.claim();
 });
