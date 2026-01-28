@@ -1,0 +1,279 @@
+.trip-prediction {
+    padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.prediction-form {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+}
+
+.location-btn, .time-btn {
+    padding: 0.75rem 0.5rem;
+    background: var(--background);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+}
+
+.location-btn.selected, .time-btn.selected {
+    border-color: var(--primary);
+    background: #eff6ff;
+    font-weight: 600;
+}
+
+.select-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--background);
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.predict-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+.predict-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.prediction-result {
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.result-header h3 {
+    font-size: 1.25rem;
+}
+
+.confidence {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: #10b981;
+    color: white;
+}
+
+.result-card {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.result-main {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
+}
+
+.result-icon {
+    font-size: 2.5rem;
+}
+
+.result-label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.25rem;
+}
+
+.result-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.result-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+}
+
+.recommendation {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #fef3c7;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+.recommendation p {
+    flex: 1;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+
+
+
+
+
+.location-loading {
+    padding: 15px;
+    text-align: center;
+    background: #f0f7ff;
+    border-radius: 8px;
+    color: #1976d2;
+}
+
+.city-input-wrapper {
+    position: relative;
+}
+
+.city-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.city-input:focus {
+    border-color: #1976d2;
+}
+
+.city-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-top: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.city-suggestion-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.city-suggestion-item:hover {
+    background: #f5f5f5;
+}
+
+.location-display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: #f0f7ff;
+    border-radius: 8px;
+}
+
+.location-value {
+    font-weight: 500;
+    color: #1976d2;
+}
+
+.change-location-btn {
+    padding: 6px 12px;
+    background: white;
+    border: 1px solid #1976d2;
+    color: #1976d2;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.change-location-btn:hover {
+    background: #1976d2;
+    color: white;
+}
+
+.datetime-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.datetime-input:focus {
+    border-color: #1976d2;
+}
