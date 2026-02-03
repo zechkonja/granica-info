@@ -1,0 +1,146 @@
+.border-selector-wrapper {  
+    margin-bottom: 1.5rem;  
+    position: relative;  
+}  
+  
+.section-label {  
+    display: block;  
+    font-size: 0.8125rem;  
+    font-weight: 600;  
+    color: var(--text-secondary);  
+    margin-bottom: 0.75rem;  
+    text-transform: uppercase;  
+    letter-spacing: 0.5px;  
+}  
+  
+/* Selected Border Toggle */  
+.border-selector-toggle {  
+    display: flex;  
+    align-items: center;  
+    gap: 0.875rem;  
+    width: 100%;  
+    padding: 1rem;  
+    background: var(--surface);  
+    border: 2px solid var(--border);  
+    border-radius: var(--radius-sm);  
+    cursor: pointer;  
+    transition: all 0.2s;  
+    text-align: left;  
+    box-shadow: var(--shadow-sm);  
+}  
+  
+.border-selector-toggle:active {  
+    transform: scale(0.98);  
+}  
+  
+.border-selector-toggle:hover {  
+    border-color: var(--primary);  
+}  
+  
+.border-flag {  
+    font-size: 1.75rem;  
+    flex-shrink: 0;  
+}  
+  
+.border-info {  
+    display: flex;  
+    flex-direction: column;  
+    gap: 0.125rem;  
+    flex: 1;  
+}  
+  
+.border-name {  
+    font-size: 0.9375rem;  
+    font-weight: 600;  
+    color: var(--text);  
+}  
+  
+.border-route {  
+    font-size: 0.75rem;  
+    color: var(--text-secondary);  
+}  
+  
+.dropdown-arrow {  
+    font-size: 0.875rem;  
+    color: var(--text-secondary);  
+    transition: transform 0.3s ease;  
+    flex-shrink: 0;  
+}  
+  
+.dropdown-arrow.open {  
+    transform: rotate(180deg);  
+}  
+  
+/* Dropdown Options */  
+.border-dropdown {  
+    position: absolute;  
+    top: calc(100% + 0.5rem);  
+    left: 0;  
+    right: 0;  
+    background: var(--surface);  
+    border: 1px solid var(--border);  
+    border-radius: var(--radius-sm);  
+    box-shadow: var(--shadow-lg);  
+    z-index: 1000;  
+    overflow: hidden;  
+    animation: dropdownSlide 0.2s ease;  
+}  
+  
+@keyframes dropdownSlide {  
+    from {  
+        opacity: 0;  
+        transform: translateY(-10px);  
+    }  
+    to {  
+        opacity: 1;  
+        transform: translateY(0);  
+    }  
+}  
+  
+.border-option {  
+    display: flex;  
+    align-items: center;  
+    gap: 0.875rem;  
+    width: 100%;  
+    padding: 1rem;  
+    background: var(--surface);  
+    border: none;  
+    border-bottom: 1px solid var(--border);  
+    cursor: pointer;  
+    transition: background 0.2s;  
+    text-align: left;  
+}  
+  
+.border-option:last-child {  
+    border-bottom: none;  
+}  
+  
+.border-option:active {  
+    background: var(--background);  
+}  
+  
+.border-option.selected {  
+    background: #eff6ff;  
+}  
+  
+.check-mark {  
+    font-size: 1.25rem;  
+    color: var(--primary);  
+    font-weight: 700;  
+    flex-shrink: 0;  
+}  
+  
+/* Mobile optimization */  
+@media (max-width: 480px) {  
+    .border-flag {  
+        font-size: 1.5rem;  
+    }  
+      
+    .border-name {  
+        font-size: 0.875rem;  
+    }  
+      
+    .border-route {  
+        font-size: 0.6875rem;  
+    }  
+}  

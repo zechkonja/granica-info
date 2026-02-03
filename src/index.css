@@ -1,13 +1,53 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+* {  
+    margin: 0;  
+    padding: 0;  
+    box-sizing: border-box;  
+}  
+  
+html {  
+    height: 100%;  
+    height: -webkit-fill-available;  
+}  
+  
+body {  
+    min-height: 100vh;  
+    min-height: -webkit-fill-available;  
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',  
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',  
+        sans-serif;  
+    -webkit-font-smoothing: antialiased;  
+    -moz-osx-font-smoothing: grayscale;  
+    margin: 0;  
+    padding: 0;  
+    overflow-x: hidden;  
+    background: #f1f5f9;  
+}  
+  
+#root {  
+    min-height: 100vh;  
+    min-height: -webkit-fill-available;  
+    display: flex;  
+    flex-direction: column;  
+}  
+  
+/* Prevent pull-to-refresh on mobile */  
+body {  
+    overscroll-behavior-y: contain;  
+}  
+  
+/* Remove tap highlight on mobile */  
+* {  
+    -webkit-tap-highlight-color: transparent;  
+}  
+  
+/* Ensure smooth scrolling */  
+html {  
+    scroll-behavior: smooth;  
+}  
+  
+/* Fix for iOS Safari viewport height issues */  
+@supports (-webkit-touch-callout: none) {  
+    body {  
+        min-height: -webkit-fill-available;  
+    }  
+}  
